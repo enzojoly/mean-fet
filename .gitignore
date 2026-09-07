@@ -1,0 +1,29 @@
+
+# Build artifacts
+dist-newstyle/
+dist/
+.stack-work/
+# GHC
+*.hi
+*.o
+*.dyn_hi
+*.dyn_o
+# Logs
+*.log
+# Editor cruft
+*~
+*.swp
+*.swo
+.vscode/
+.idea/
+# OS cruft
+.DS_Store
+Thumbs.db
+# Cabal
+cabal.project.local
+.ghc.environment.*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
