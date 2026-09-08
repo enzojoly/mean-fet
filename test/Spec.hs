@@ -20,6 +20,7 @@ import qualified CellsSpec
 import qualified PrimitiveSpec
 import qualified DecompositionSpec
 import qualified SensitivitySpec
+import qualified SlopeSpec
 
 main :: IO ()
 main = defaultMain $ testGroup "Bivia"
@@ -39,4 +40,5 @@ main = defaultMain $ testGroup "Bivia"
     , PrimitiveSpec.tests
     , DecompositionSpec.tests
     , SensitivitySpec.tests
+    , SlopeSpec.tests
     ]

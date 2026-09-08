@@ -72,6 +72,8 @@ test-suite spec
                     , CellsSpec
                     , PrimitiveSpec
                     , DecompositionSpec
+                    , SensitivitySpec
+                    , SlopeSpec
     build-depends:    base
                     , encounters-ring
                     , vector
