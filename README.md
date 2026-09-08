@@ -1,6 +1,6 @@
 ![Haskell](https://img.shields.io/badge/Haskell-5E5086?style=flat&logo=haskell&logoColor=white) ![GHC](https://img.shields.io/badge/GHC-9.4%2B-5E5086?style=flat&logo=haskell&logoColor=white) ![Cabal](https://img.shields.io/badge/Cabal-3.8%2B-5E5086?style=flat&logo=haskell&logoColor=white) ![Tasty](https://img.shields.io/badge/Tasty-5E5086?style=flat&logo=haskell&logoColor=white) ![HUnit](https://img.shields.io/badge/HUnit-5E5086?style=flat&logo=haskell&logoColor=white) ![QuickCheck](https://img.shields.io/badge/QuickCheck-5E5086?style=flat&logo=haskell&logoColor=white) ![hmatrix](https://img.shields.io/badge/hmatrix-BLAS%2FLAPACK-0B5FA5?style=flat) ![JSON](https://img.shields.io/badge/JSON-000000?style=flat&logo=json&logoColor=white) ![LaTeX](https://img.shields.io/badge/LaTeX-008080?style=flat&logo=latex&logoColor=white) ![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat)
 
-![Tests](https://img.shields.io/badge/tests-387%20passing-brightgreen?style=flat) ![Suite](https://img.shields.io/badge/spec%20modules-16-blue?style=flat) ![Exact](https://img.shields.io/badge/means-exact%20to%2010%E2%81%BB%C2%B9%C2%B9-blueviolet?style=flat)
+![Tests](https://img.shields.io/badge/tests-393%20passing-brightgreen?style=flat) ![Suite](https://img.shields.io/badge/spec%20modules-17-blue?style=flat) ![Exact](https://img.shields.io/badge/means-exact%20to%2010%E2%81%BB%C2%B9%C2%B9-blueviolet?style=flat)
 
 # mean-fet — Mean First-Encounter Time & PMF Solver
 
@@ -136,10 +136,10 @@ In `--passage` mode the document carries `pmf`, `pure_ring_pmf` and `mfpt.{netwo
 
 ## Test suite
 
-**387 tests · 16 spec modules · 361 HUnit cases + 26 QuickCheck properties · all passing (≈ 35 s, single core).**
+**393 tests · 17 spec modules · 367 HUnit cases + 26 QuickCheck properties · all passing (≈ 46 s, single core).**
 
 ```
-All 387 tests passed (34.83s)
+All 393 tests passed (46.45s)
 ```
 
 | Module | Tests | Strategy | What it establishes |
@@ -160,6 +160,7 @@ All 387 tests passed (34.83s)
 | `PrimitiveSpec` | 40 | Property | Every primitive as a probability kernel at seven mobilities: row sums, positivity, detailed balance, continuity at `q → 1`, reversibility labels |
 | `DecompositionSpec` | 24 | Consistency | Per-site weights and means sum to the mean; per-site PMFs sum to the total at every step; relabelling invariance; 2D |
 | `SensitivitySpec` | 33 | Oracle | Mobility as a time change (one walker) and not (a pair); frozen partner; bare-ring minimum; exact midpoint decomposition |
+| `SlopeSpec` | 6 | Oracle | Slope of the mean at zero mobility of walker B: derivative of the pair-space resolvent against the closed form in walker A's hitting times and occupation, on the interval, the ring and the 2D box |
 
 ```bash
 cabal test
@@ -266,7 +267,7 @@ mean-fet/
 │   ├── Serialise.hs                    # JSON bundles via ByteString Builder
 │   ├── Cli.hs                          # Flag parsing, range validation, output paths
 │   └── Diagnostics.hs                  # GHCi diagnostics: mobility sweeps, site-resolved decomposition
-└── test/                               # Test suite (16 spec modules, 387 tests, ~3,950 lines)
+└── test/                               # Test suite (17 spec modules, 393 tests, ~4,050 lines)
     ├── Spec.hs                         # Tasty runner
     ├── UnitSpec.hs                     # Deterministic spot checks
     ├── PropertySpec.hs                 # QuickCheck invariants
@@ -283,7 +284,8 @@ mean-fet/
     ├── CellsSpec.hs                    # All six cells vs pair chain
     ├── PrimitiveSpec.hs                # Primitives as probability kernels
     ├── DecompositionSpec.hs            # Per-site decomposition identities
-    └── SensitivitySpec.hs              # Mobility sensitivity of the mean
+    ├── SensitivitySpec.hs              # Mobility sensitivity of the mean
+    └── SlopeSpec.hs                    # Slope at zero mobility vs closed form
 ```
 
 ---
