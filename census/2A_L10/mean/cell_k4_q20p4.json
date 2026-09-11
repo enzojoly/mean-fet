@@ -1,0 +1,34 @@
+{
+  "mode": "encounter",
+  "config": {
+    "N": 10,
+    "K": 4,
+    "q": 0.75,
+    "qB": 0.4,
+    "srcA": 1,
+    "srcB": 5,
+    "rho": 1,
+    "defects": "[]"
+  },
+  "encounter_pmf": [],
+  "encounter_mfpt": 28.679278510906858,
+  "splitting_weight": 0.046919527208165966,
+  "diagnostics": {
+    "censored_fraction": 0,
+    "tail_scale": 0,
+    "self_consistency_residual": 0,
+    "mean_provenance": "direct"
+  },
+  "peaks": [],
+  "splitting_probabilities": [],
+  "site_mean_contributions": [],
+  "site_pmf": [],
+  "simulation": {
+    "mfpt": null,
+    "conditional_mean": null,
+    "censored_fraction": null,
+    "tail_scale": null,
+    "stderr": null,
+    "histogram": null
+  }
+}
